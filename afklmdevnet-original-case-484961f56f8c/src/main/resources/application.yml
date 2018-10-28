@@ -1,0 +1,23 @@
+server:
+    port: 9000
+    contextPath: /travel
+
+security:
+  basic:
+    enabled: false                    # again no basic auth 
+  oauth2:
+        clientID: travel-api-client
+        clientSecret: psw
+        accessTokenUri: http://localhost:8080/oauth/token
+        userAuthorizationUri: http://localhost:8080/oauth/token
+      
+config:
+    oauth2:
+        clientID: travel-api-client
+        clientSecret: psw
+        accessTokenUri: http://localhost:8080/oauth/token
+        userAuthorizationUri: http://localhost:8080/oauth/token
+        resourceURI: http://localhost:8080/fares/YOW/YPR
+
+  
+       
