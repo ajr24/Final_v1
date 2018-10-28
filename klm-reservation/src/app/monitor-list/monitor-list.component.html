@@ -1,0 +1,18 @@
+<div class="container">
+
+    <div class="col-xs-6 col-md-6 table-class" *ngIf="status">
+        <table class="table table-bordered ">
+            <tbody>
+                <tr class="thead-dark">
+                    <th>Status code</th>
+                    <th>Count</th>
+                </tr>
+
+                <tr *ngFor="let _status of status">
+                    <th>{{_status.code}}</th>
+                    <th>{{_status.count}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

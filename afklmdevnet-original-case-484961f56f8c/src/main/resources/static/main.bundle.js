@@ -67,7 +67,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".nav-margin {\r\n\t    margin-left: 20px;\r\n    margin-right: 20px;\r\n     margin-top: 5px;\r\n}\r\n.active {\r\n  background-color: #000000;\r\n  color : #ffffff;\r\n}", ""]);
 
 // exports
 
@@ -80,7 +80,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2\">\r\n      <ul class=\"nav nav-tabs\">\r\n        <li role=\"presentation\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true\r\n\r\n        }\"><a routerLink=\"/flight\">Home</a></li>\r\n        <li role=\"presentation\" routerLinkActive=\"active\"><a routerLink=\"/fare\">Flight Fare</a></li>\r\n        <li role=\"presentation\" routerLinkActive=\"active\"><a routerLink=\"/list\">Monitoring details</a></li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2\">\r\n   <router-outlet></router-outlet>\r\n    </div>\r\n  </div>\r\n  \r\n</div>\r\n"
+module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 nav-margin\">\r\n      <ul class=\"nav nav-tabs\">\r\n        <li [routerLinkActive]=\"['active']\" class=\"nav-margin\" [routerLinkActiveOptions]=\"{exact: true\r\n\r\n        }\"><a routerLink=\"/flight\">Home</a></li>\r\n        <li   [routerLinkActive]=\"['active']\" class=\"nav-margin\"><a routerLink=\"/fare\">Flight Fare</a></li>\r\n        <li   [routerLinkActive]=\"['active']\" class=\"nav-margin\"><a routerLink=\"/list\">Monitoring details</a></li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2\">\r\n   <router-outlet></router-outlet>\r\n    </div>\r\n  </div>\r\n  \r\n</div>\r\n"
 
 /***/ }),
 
@@ -131,17 +131,15 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__flight_fare_flight_fare_component__ = __webpack_require__("../../../../../src/app/flight-fare/flight-fare.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__monitor_list_monitor_list_component__ = __webpack_require__("../../../../../src/app/monitor-list/monitor-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__monitoring_monitoring_component__ = __webpack_require__("../../../../../src/app/monitoring/monitoring.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__service_flight_fare_service__ = __webpack_require__("../../../../../src/app/service/flight-fare.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__service_status_service__ = __webpack_require__("../../../../../src/app/service/status.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__service_airport_service__ = __webpack_require__("../../../../../src/app/service/airport.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__service_flight_fare_service__ = __webpack_require__("../../../../../src/app/service/flight-fare.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__service_status_service__ = __webpack_require__("../../../../../src/app/service/status.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__service_airport_service__ = __webpack_require__("../../../../../src/app/service/airport.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -165,8 +163,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_8__flight_fare_flight_fare_component__["a" /* FlightFareComponent */],
                 __WEBPACK_IMPORTED_MODULE_9__monitor_list_monitor_list_component__["a" /* MonitorListComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__monitoring_monitoring_component__["a" /* MonitoringComponent */]
+                __WEBPACK_IMPORTED_MODULE_10__home_home_component__["a" /* HomeComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -177,7 +174,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_5__angular_forms__["e" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ngx_bootstrap__["a" /* TypeaheadModule */].forRoot()
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_12__service_flight_fare_service__["a" /* FlightFareService */], __WEBPACK_IMPORTED_MODULE_14__service_airport_service__["a" /* AirportService */], __WEBPACK_IMPORTED_MODULE_13__service_status_service__["a" /* StatusService */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_11__service_flight_fare_service__["a" /* FlightFareService */], __WEBPACK_IMPORTED_MODULE_13__service_airport_service__["a" /* AirportService */], __WEBPACK_IMPORTED_MODULE_12__service_status_service__["a" /* StatusService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
@@ -196,7 +193,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".btn-class{\r\nmargin:30px 0;\r\n}\r\n.heading-margin{\r\nmargin-left: 17px;\r\nmargin-top: 30px;\r\n}\r\n.loader {\r\n  border: 16px solid #f3f3f3;\r\n  border-radius: 50%;\r\n  border-top: 16px solid #3498db;\r\n  width: 120px;\r\n  height: 120px;\r\n  -webkit-animation: spin 2s linear infinite; /* Safari */\r\n  animation: spin 2s linear infinite;\r\n}\r\n/* Safari */\r\n@-webkit-keyframes spin {\r\n  0% { -webkit-transform: rotate(0deg); }\r\n  100% { -webkit-transform: rotate(360deg); }\r\n}\r\n@keyframes spin {\r\n  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }\r\n  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }\r\n}", ""]);
 
 // exports
 
@@ -209,7 +206,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/flight-fare/flight-fare.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Get Flight Fare</h2>\r\n<div class=\"container\">\r\n    <div *ngIf=\"airports\">\r\n\r\n        <div class=\"col-xs-12\">\r\n            <div class=\"col-xs-2\"> <span>Origin</span> </div>\r\n            <div class=\"col-xs-4\">\r\n                <input [(ngModel)]=\"selectedOrigin\" [typeahead]=\"airports\" class=\"form-control\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-2\"> <span>Dest</span> </div>\r\n            <div class=\"col-xs-6\">\r\n                <input [(ngModel)]=\"selectedDest\" [typeahead]=\"airports\" class=\"form-control\">\r\n            </div>\r\n        </div>\r\n\r\n        <button class=\"btn btn-primary\"  *ngIf=\"selectedOrigin && this.selectedDest\" type=\"button\" (click)=\"onSubmit()\">Submit</button>\r\n        <button class=\"btn btn-primary\"  *ngIf=\"selectedOrigin && this.selectedDest\" type=\"button\" (click)=\"onReset()\">Reset</button>\r\n\r\n        <div class=\"col-xs-12\" *ngIf=\" fare\">\r\n            <table class=\"table table-stripped\">\r\n                <tbody>\r\n                    <tr>\r\n                        <th>Source</th>\r\n                        <th>Destination</th>\r\n                        <th>Fare</th>\r\n                    </tr>\r\n\r\n                    <tr>\r\n                        <th>{{fare.origin}}</th>\r\n                        <th>{{fare.destination}}</th>\r\n                        <th>{{fare.currency}} {{fare.amount}}</th>\r\n                    </tr>\r\n                </tbody>\r\n            </table>\r\n\r\n        </div>\r\n        <div *ngIf=\"formSubmitted && !fare\">\r\n  \t\t\tPlease wait loading\r\n\t\t</div>\r\n    </div>"
+module.exports = "<h5 class=\"heading-margin\">Flight Fare</h5>\r\n<div class=\"container\">\r\n\t<div class=\"loader\" *ngIf=\"!airportsInitialized\">\r\n  \t\t\t\r\n\t</div>\r\n    <div *ngIf=\"airports\">\r\n\r\n        <div class=\"col-xs-12 \">\r\n            <div class=\"col-xs-2\"> <span>Select Origin</span> </div>\r\n            <div class=\"col-xs-4\">\r\n                <input [(ngModel)]=\"selectedOrigin\" [typeahead]=\"airports\" class=\"form-control\">\r\n            </div>\r\n\r\n            <div class=\"col-xs-2\"> <span>Select destination</span> </div>\r\n            <div class=\"col-xs-6\">\r\n                <input [(ngModel)]=\"selectedDest\" [typeahead]=\"airports\" class=\"form-control\">\r\n            </div>\r\n            \r\n        </div>\r\n\r\n        <button class=\"btn btn-primary btn-class\"  *ngIf=\"selectedOrigin && this.selectedDest && (selectedOrigin !== selectedDest)\" type=\"button\" (click)=\"onSubmit()\">Submit</button>\r\n        <button class=\"btn btn-primary btn-class\"  *ngIf=\"selectedOrigin && this.selectedDest\" type=\"button\" (click)=\"onReset()\">Reset</button>\r\n\r\n \t\t<span class=\"help-block\" *ngIf=\"selectedOrigin && (selectedOrigin === selectedDest)\">Origin and Destination cannot be same!! </span>\r\n        <div class=\"col-xs-12\" *ngIf=\" fare\">\r\n            <table class=\"table table-stripped\">\r\n                <tbody>\r\n                    <tr class=\"thead-dark\">\r\n                        <th>Source</th>\r\n                        <th>Destination</th>\r\n                        <th>Fare</th>\r\n                    </tr>\r\n\r\n                    <tr>\r\n                        <th>{{fare.origin}}</th>\r\n                        <th>{{fare.destination}}</th>\r\n                        <th>{{fare.currency}} {{fare.amount}}</th>\r\n                    </tr>\r\n                </tbody>\r\n            </table>\r\n\r\n        </div>\r\n        <div class=\"loader\" *ngIf=\"formSubmitted && !fare && !resetClicked\">\r\n  \t\t\t\r\n\t\t</div>\r\n    </div>"
 
 /***/ }),
 
@@ -241,24 +238,32 @@ var FlightFareComponent = /** @class */ (function () {
         this.flightFareServcie = flightFareServcie;
         this.airportService = airportService;
         this.formSubmitted = false;
+        this.resetClicked = true;
+        this.airportsInitialized = false;
         this.selectedDest = '';
         this.selectedOrigin = '';
     }
     FlightFareComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.airportsInitialized = false;
+        this.resetClicked = true;
         this.airportService.getAirports().subscribe(function (data) {
             _this.airports = data;
+            _this.airportsInitialized = true;
         });
     };
     FlightFareComponent.prototype.onSubmit = function () {
         var _this = this;
         this.formSubmitted = true;
+        this.resetClicked = false;
         // Slice prefix of the origin which is code
         this.flightFareServcie.getFare(this.selectedOrigin.slice(1, 4), this.selectedDest.slice(1, 4)).subscribe(function (data) { return _this.fare = data; });
     };
     FlightFareComponent.prototype.onReset = function () {
         this.selectedOrigin = '';
         this.selectedDest = '';
+        this.fare = null;
+        this.resetClicked = true;
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* ViewChild */])('orgTxt'),
@@ -287,7 +292,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".btn-class{\r\n\tpadding-top : 20px;\r\n\tpadding-left : 30px\r\n}", ""]);
 
 // exports
 
@@ -300,7 +305,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<button class=\"btn btn-primary\"\n        (click)=\"loadFlightFares()\">Flight Fares</button>\n\n<button class=\"btn btn-primary\"\n        (click)=\"loadMonitoringList()\">Monitoring List</button>\n\t\t"
+module.exports = "<div class=\"container btn-class\">\n<button class=\"btn btn-primary\"\n        (click)=\"loadFlightFares()\">Flight Fares</button>\n\n<button class=\"btn btn-primary \"\n        (click)=\"loadMonitoringList()\">Monitoring List</button>\n\t\t\n\t\t</div>"
 
 /***/ }),
 
@@ -357,7 +362,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".table-class{\r\n\tpadding-top : 20px\r\n}", ""]);
 
 // exports
 
@@ -370,7 +375,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/monitor-list/monitor-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"row\">\n<div class=\"col-xs-12\" *ngIf=\"status\">\n            <table class=\"table table-stripped\">\n                <tbody>\n                    <tr>\n                        <th>Uri</th>\n                        <th>Status code</th>\n                        <th>Count</th>\n                    </tr>\n\n                    <tr *ngFor=\"let _status of status\">\n                        <th>{{_status.uri}}</th>\n                        <th>{{_status.code}}</th>\n                        <th>{{_status.count}}</th>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n        </div>\n        </div>"
+module.exports = "<div class=\"container\">\n\n    <div class=\"col-xs-6 col-md-6 table-class\" *ngIf=\"status\">\n        <table class=\"table table-bordered \">\n            <tbody>\n                <tr class=\"thead-dark\">\n                    <th>Status code</th>\n                    <th>Count</th>\n                </tr>\n\n                <tr *ngFor=\"let _status of status\">\n                    <th>{{_status.code}}</th>\n                    <th>{{_status.count}}</th>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -411,67 +416,6 @@ var MonitorListComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__service_status_service__["a" /* StatusService */]])
     ], MonitorListComponent);
     return MonitorListComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/monitoring/monitoring.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/monitoring/monitoring.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  monitoring works!\n</p>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/monitoring/monitoring.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MonitoringComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var MonitoringComponent = /** @class */ (function () {
-    function MonitoringComponent() {
-    }
-    MonitoringComponent.prototype.ngOnInit = function () {
-    };
-    MonitoringComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'app-monitoring',
-            template: __webpack_require__("../../../../../src/app/monitoring/monitoring.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/monitoring/monitoring.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], MonitoringComponent);
-    return MonitoringComponent;
 }());
 
 
