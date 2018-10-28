@@ -54,13 +54,16 @@ public class MetricsService {
 		JsonNode responseJson;
 		int countRequestCountByStatusTotal = 0;
 		int countRequestCountByStatus = 0;
+		int tableSize = 0;
 		List<HttpStatusInfoEntity> httpStatusInfoEntityList = new ArrayList<>();
 		try {
 			stringBuilder.append(selfUrl).append(metricsUri);
 			String url = stringBuilder.toString();
 			responseJson = restTemplate.getForObject(url, JsonNode.class);
 
-			int tableSize = httpRepo.findAll().size();
+			//To do h2 db clean up before saving consolidated metrics
+			logger.info("** delete all to clean up before saving consolidated metrics");
+			httpRepo.deleteAll();
 			
 		/*	for(String code:  codeList){
 				for (String uri: urlList) { 
@@ -104,7 +107,6 @@ public class MetricsService {
 				httpStatusList.add( modelMapper.map(entity, HttpStatusCountInfo.class));
 			}
 	
-
 		} catch (Exception e) {
 			logger.error("Error in MetricsService" +e.getMessage());
 		}
@@ -123,6 +125,13 @@ public class MetricsService {
 				
 	}
 	
+	/**
+	 * Unused method, just to get metrics for uri_statuscode combination like fares_200, fares_404, fares_500, fares_400
+	 * @param responseJson
+	 * @param statusCode
+	 * @param uri
+	 * @return
+	 */
 	private int addRequestCountByStatus(JsonNode responseJson, String statusCode, String uri) {
 		int totalCount = 0;
 		 for( CounterStatus counterStatus: CounterStatus.getUriStatusKeyByCodeAndUri(statusCode, uri)){

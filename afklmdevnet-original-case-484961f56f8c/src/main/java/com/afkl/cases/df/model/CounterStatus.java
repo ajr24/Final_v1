@@ -9,18 +9,15 @@ public enum CounterStatus {
 	FARES_200_STATUS("counter.status.200.fares.fromDestination.toDestination"),
 	FARES_500_STATUS("counter.status.500.fares.fromDestination.toDestination"),
 	FARES_400_STATUS("counter.status.400.fares.fromDestination.toDestination"),
-	FARES_404_STATUS("counter.status.404.fares.fromDestination.toDestination"),
 	MONITOR_200_STATUS("counter.status.200.monitor"),
 	MONITOR_400_STATUS("counter.status.400.monitor"),
-	MONITOR_404_STATUS("counter.status.404.monitor"),
 	MONITOR_500_STATUS("counter.status.500.monitor"),
 	METRICS_200_STATUS("counter.status.200.metrics"),
 	METRICS_400_STATUS("counter.status.400.metrics"),
-	METRICS_404_STATUS("counter.status.404.metrics"),
 	METRICS_500_STATUS("counter.status.500.metrics"),
 	AIRPORTS_200_STATUS("counter.status.200.airports"),
 	AIRPORTS_400_STATUS("counter.status.400.airports"),
-	AIRPORTS_404_STATUS("counter.status.404.airports"),
+	_404_STATUS("counter.status.404.error"),
 	AIRPORTS_500_STATUS("counter.status.500.airports");
 	
 	private String key;
